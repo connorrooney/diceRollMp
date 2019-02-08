@@ -9,6 +9,8 @@ const winUpdater1 = document.getElementById("wins1");
 const winUpdater2 = document.getElementById("wins2");
 const winner = document.getElementById("winner");
 const newRound = document.getElementById("round");
+const player1 = document.getElementById("A");
+const player2 = document.getElementById("B");
 let turn = true;
 let scoreA = 0;
 let wins1 = 0;
@@ -128,9 +130,13 @@ function turnCount() {
     if(turn == true ){
         rollerB.disabled = true;
         rollerA.disabled = false;
+        player1.style.borderStyle = "solid"
+        player2.style.borderStyle = "none"
     } else {
         rollerA.disabled = true;
         rollerB.disabled = false;
+        player2.style.borderStyle = "solid"
+        player1.style.borderStyle = "none"
     }
 }
 
@@ -147,11 +153,13 @@ function gameCheck() {
         scoreUpdater1.textContent = scoreA;
         scoreUpdater2.textContent = scoreB;
         winner.textContent = "Player 1 WINS!"
-        diceImg.src = "/img/trophySmall.png"
+        diceImg.src = "/img/trophySmall.gif"
         newRound.style.display = "block"
+        player2.style.borderStyle = "none"
+        player1.style.borderStyle = "none"
     } else if (scoreB >= 20) {
         rollerA.disabled = true;
-        rollerB.disabled = true;s
+        rollerB.disabled = true;
         infoUpdater2.textContent = `Congratulations Player 2 you made it to 20!`
         infoUpdater1.textContent = `You lose, better luck next time.`
         wins2++;
@@ -161,8 +169,10 @@ function gameCheck() {
         scoreUpdater1.textContent = scoreA;
         scoreUpdater2.textContent = scoreB;
         winner.textContent = "Player 2 WINS!"
-        diceImg.src = "/img/trophySmall.png"
+        diceImg.src = "/img/trophySmall.gif"
         newRound.style.display = "block"
+        player2.style.borderStyle = "none"
+        player1.style.borderStyle = "none"
     }
 }
 
@@ -171,7 +181,8 @@ function nextRound() {
     rollerA.disabled = false;
     newRound.style.display = "none";
     winner.textContent = "";
-    diceImg.style.display = "none;"
+    diceImg.style.display = "none";
+    player1.style.borderStyle = "solid";
 }
 
 function resetGame() {

@@ -60,3 +60,11 @@ body {
 #round {
     display: none;
 }
+
+#A {
+    border: 3px solid green;
+}
+
+#B {
+    border: 3px none green;
+}
