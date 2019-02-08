@@ -31,7 +31,6 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;
-
     height: 400px;
     width: 100%;
     background: #ffffff;
@@ -44,7 +43,6 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;
-
     height: 400px;
     width: 100%;
     background: #ffffff;
@@ -57,4 +55,8 @@ body {
 
 #dice {
     display:none;
+}
+
+#round {
+    display: none;
 }

@@ -1,76 +1,193 @@
-const rollBtn = document.getElementById("roller");
-const scoreUpdater = document.getElementById("score");
-const infoUpdater = document.getElementById("info");
+const rollerA = document.getElementById("roller1");
+const rollerB = document.getElementById("roller2");
+const scoreUpdater1 = document.getElementById("score1");
+const infoUpdater1 = document.getElementById("info1");
+const scoreUpdater2 = document.getElementById("score2");
+const infoUpdater2 = document.getElementById("info2");
 const diceImg = document.getElementById("dice");
-const resetGame = document.getElementById("reset");
-const winUpdater = document.getElementById("wins");
-let player1Score = 0;
-let player1Wins = 0;
-let player2Score = 0;
-let player2Wins = 0;
+const winUpdater1 = document.getElementById("wins1");
+const winUpdater2 = document.getElementById("wins2");
+const winner = document.getElementById("winner");
+const newRound = document.getElementById("round");
+let turn = true;
+let scoreA = 0;
+let wins1 = 0;
+let scoreB = 0;
+let wins2 = 0;
 
 
-roller.addEventListener("click", () => {
+rollerA.addEventListener("click", () => {
     let num = (Math.floor(Math.random() * 6 ) + 1);
     diceImg.style.display = "block";
     console.log(num);
     if(num == 1){
-        score = 0;
-        scoreUpdater.textContent = score;
+        scoreA = 0;
+        scoreUpdater1.textContent = scoreA;
         diceImg.src = "/img/dice1.png";
-        infoUpdater.textContent = "You rolled a 1! You score has been reset."
+        infoUpdater1.textContent = "You rolled a 1! You score has been reset."
+        turn = false;
+        turnCount();  
     } else if(num == 2) {
-        score += 2;
-        scoreUpdater.textContent = score;
+        scoreA += 2;
+        scoreUpdater1.textContent = scoreA;
         diceImg.src = "/img/dice2.png";
-        infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        infoUpdater1.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        turn = false;
+        turnCount();
         gameCheck();
     } else if(num == 3) {
-        score += 3;
-        scoreUpdater.textContent = score;
+        scoreA += 3;
+        scoreUpdater1.textContent = scoreA;
         diceImg.src = "/img/dice3.png";
-        infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        infoUpdater1.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        turn = false;
+        turnCount();
         gameCheck();
     } else if(num == 4){
-        score += 4
-        scoreUpdater.textContent = score;
+        scoreA += 4
+        scoreUpdater1.textContent = scoreA;
         diceImg.src = "/img/dice4.png";
-        infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        infoUpdater1.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        turn = false;
+        turnCount();
         gameCheck();
     } else if(num == 5){
-        score += 5
-        scoreUpdater.textContent = score;
+        scoreA += 5
+        scoreUpdater1.textContent = scoreA;
         diceImg.src = "/img/dice5.png";
-        infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        infoUpdater1.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        turn = false;
+        turnCount();
         gameCheck();
     } else if(num == 6) {
-        score += 6
-        scoreUpdater.textContent = score;
+        scoreA += 6
+        scoreUpdater1.textContent = scoreA;
         diceImg.src = "/img/dice6.png";
-        infoUpdater.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        infoUpdater1.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        turn = false;
+        turnCount();
         gameCheck();
     }
 });
 
-function gameCheck() {
-    if(score >= 20) {
-        infoUpdater.textContent = `Congratulations you made it to 20!`
-        wins++;
-        winUpdater.textContent = wins;
-        score = 0
-        scoreUpdater.textContent = score;
-        diceImg.style.display = "none"
+rollerB.addEventListener("click", () => {
+    let num = (Math.floor(Math.random() * 6 ) + 1);
+    diceImg.style.display = "block";
+    console.log(num);
+    if(num == 1){
+        scoreB = 0;
+        scoreUpdater2.textContent = scoreB;
+        diceImg.src = "/img/dice1.png";
+        infoUpdater2.textContent = "You rolled a 1! You score has been reset."
+        turn = true;
+        turnCount();
+    } else if(num == 2) {
+        scoreB += 2;
+        scoreUpdater2.textContent = scoreB;
+        diceImg.src = "/img/dice2.png";
+        infoUpdater2.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        turn = true;
+        turnCount();
+        gameCheck();
+    } else if(num == 3) {
+        scoreB += 3;
+        scoreUpdater2.textContent = scoreB;
+        diceImg.src = "/img/dice3.png";
+        infoUpdater2.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        turn = true;
+        turnCount();
+        gameCheck();
+    } else if(num == 4){
+        scoreB += 4
+        scoreUpdater2.textContent = scoreB;
+        diceImg.src = "/img/dice4.png";
+        infoUpdater2.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        turn = true;
+        turnCount();
+        gameCheck();
+    } else if(num == 5){
+        scoreB += 5
+        scoreUpdater2.textContent = scoreB;
+        diceImg.src = "/img/dice5.png";
+        infoUpdater2.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        turn = true;
+        turnCount();
+        gameCheck();
+    } else if(num == 6) {
+        scoreB += 6
+        scoreUpdater2.textContent = scoreB;
+        diceImg.src = "/img/dice6.png";
+        infoUpdater2.textContent = `You rolled a ${num}! ${num} has been added to your score.`
+        turn = true;
+        turnCount();
+        gameCheck();
+    }
+});
+
+function turnCount() {
+    if(turn == true ){
+        rollerB.disabled = true;
+        rollerA.disabled = false;
+    } else {
+        rollerA.disabled = true;
+        rollerB.disabled = false;
     }
 }
 
-resetGame.addEventListener('click', () => {
-    if(confirm("WARNING \nThis will reset your game as well as your wins. \nAre you sure you want to continue?")) {
-        wins = 0;
-        winUpdater.textContent = wins;
-        score = 0;
-        scoreUpdater.textContent = score;
-        diceImg.style.display = "none"
-    } else {
-        prompt("Reset Cancelled.")
+function gameCheck() {
+    if(scoreA >= 20) {
+        rollerA.disabled = true;
+        rollerB.disabled = true;
+        infoUpdater1.textContent = `Congratulations Player 1 you made it to 20!`
+        infoUpdater2.textContent = `You lose, better luck next time.`
+        wins1++;
+        winUpdater1.textContent = wins1;
+        scoreA = 0;
+        scoreB = 0
+        scoreUpdater1.textContent = scoreA;
+        scoreUpdater2.textContent = scoreB;
+        winner.textContent = "Player 1 WINS!"
+        diceImg.src = "/img/trophySmall.png"
+        newRound.style.display = "block"
+    } else if (scoreB >= 20) {
+        rollerA.disabled = true;
+        rollerB.disabled = true;s
+        infoUpdater2.textContent = `Congratulations Player 2 you made it to 20!`
+        infoUpdater1.textContent = `You lose, better luck next time.`
+        wins2++;
+        winUpdater2.textContent = wins2;
+        scoreA = 0;
+        scoreB = 0
+        scoreUpdater1.textContent = scoreA;
+        scoreUpdater2.textContent = scoreB;
+        winner.textContent = "Player 2 WINS!"
+        diceImg.src = "/img/trophySmall.png"
+        newRound.style.display = "block"
     }
-})
+}
+
+function nextRound() {
+    rollerB.disabled = true;
+    rollerA.disabled = false;
+    newRound.style.display = "none";
+    winner.textContent = "";
+    diceImg.style.display = "none;"
+}
+
+function resetGame() {
+    if(confirm("WARNING \nThis will reset your game as well as your wins. \nAre you sure you want to continue?")) {
+        wins1 = 0;
+        winUpdater1.textContent = wins1;
+        scoreA = 0;
+        scoreUpdater1.textContent = scoreA;
+        wins2 = 0;
+        winUpdater2.textContent = wins1;
+        scoreB = 0;
+        scoreUpdater2.textContent = scoreB;
+        diceImg.style.display = "none"
+        turn = true;
+        turnCount();
+    } else {
+        alert("Reset Cancelled.");
+    }
+};
