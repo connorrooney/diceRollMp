@@ -25,14 +25,14 @@ rollerA.addEventListener("click", () => {
     if(num == 1){
         scoreA = 0;
         scoreUpdater1.textContent = scoreA;
-        diceImg.src = "/img/dice1.png";
+        diceImg.src = "./img/dice1.png";
         infoUpdater1.textContent = "You rolled a 1! You score has been reset."
         turn = false;
         turnCount();  
     } else if(num == 2) {
         scoreA += 2;
         scoreUpdater1.textContent = scoreA;
-        diceImg.src = "/img/dice2.png";
+        diceImg.src = "./img/dice2.png";
         infoUpdater1.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         turn = false;
         turnCount();
@@ -40,7 +40,7 @@ rollerA.addEventListener("click", () => {
     } else if(num == 3) {
         scoreA += 3;
         scoreUpdater1.textContent = scoreA;
-        diceImg.src = "/img/dice3.png";
+        diceImg.src = "./img/dice3.png";
         infoUpdater1.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         turn = false;
         turnCount();
@@ -48,7 +48,7 @@ rollerA.addEventListener("click", () => {
     } else if(num == 4){
         scoreA += 4
         scoreUpdater1.textContent = scoreA;
-        diceImg.src = "/img/dice4.png";
+        diceImg.src = "./img/dice4.png";
         infoUpdater1.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         turn = false;
         turnCount();
@@ -56,7 +56,7 @@ rollerA.addEventListener("click", () => {
     } else if(num == 5){
         scoreA += 5
         scoreUpdater1.textContent = scoreA;
-        diceImg.src = "/img/dice5.png";
+        diceImg.src = "./img/dice5.png";
         infoUpdater1.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         turn = false;
         turnCount();
@@ -64,7 +64,7 @@ rollerA.addEventListener("click", () => {
     } else if(num == 6) {
         scoreA += 6
         scoreUpdater1.textContent = scoreA;
-        diceImg.src = "/img/dice6.png";
+        diceImg.src = "./img/dice6.png";
         infoUpdater1.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         turn = false;
         turnCount();
@@ -79,14 +79,14 @@ rollerB.addEventListener("click", () => {
     if(num == 1){
         scoreB = 0;
         scoreUpdater2.textContent = scoreB;
-        diceImg.src = "/img/dice1.png";
+        diceImg.src = "./img/dice1.png";
         infoUpdater2.textContent = "You rolled a 1! You score has been reset."
         turn = true;
         turnCount();
     } else if(num == 2) {
         scoreB += 2;
         scoreUpdater2.textContent = scoreB;
-        diceImg.src = "/img/dice2.png";
+        diceImg.src = "./img/dice2.png";
         infoUpdater2.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         turn = true;
         turnCount();
@@ -94,7 +94,7 @@ rollerB.addEventListener("click", () => {
     } else if(num == 3) {
         scoreB += 3;
         scoreUpdater2.textContent = scoreB;
-        diceImg.src = "/img/dice3.png";
+        diceImg.src = "./img/dice3.png";
         infoUpdater2.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         turn = true;
         turnCount();
@@ -102,7 +102,7 @@ rollerB.addEventListener("click", () => {
     } else if(num == 4){
         scoreB += 4
         scoreUpdater2.textContent = scoreB;
-        diceImg.src = "/img/dice4.png";
+        diceImg.src = "./img/dice4.png";
         infoUpdater2.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         turn = true;
         turnCount();
@@ -110,7 +110,7 @@ rollerB.addEventListener("click", () => {
     } else if(num == 5){
         scoreB += 5
         scoreUpdater2.textContent = scoreB;
-        diceImg.src = "/img/dice5.png";
+        diceImg.src = "./img/dice5.png";
         infoUpdater2.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         turn = true;
         turnCount();
@@ -118,7 +118,7 @@ rollerB.addEventListener("click", () => {
     } else if(num == 6) {
         scoreB += 6
         scoreUpdater2.textContent = scoreB;
-        diceImg.src = "/img/dice6.png";
+        diceImg.src = "./img/dice6.png";
         infoUpdater2.textContent = `You rolled a ${num}! ${num} has been added to your score.`
         turn = true;
         turnCount();
@@ -153,7 +153,7 @@ function gameCheck() {
         scoreUpdater1.textContent = scoreA;
         scoreUpdater2.textContent = scoreB;
         winner.textContent = "Player 1 WINS!"
-        diceImg.src = "/img/trophySmall.gif"
+        diceImg.src = "./img/trophySmall.gif"
         newRound.style.display = "block"
         player2.style.borderStyle = "none"
         player1.style.borderStyle = "none"
@@ -169,7 +169,7 @@ function gameCheck() {
         scoreUpdater1.textContent = scoreA;
         scoreUpdater2.textContent = scoreB;
         winner.textContent = "Player 2 WINS!"
-        diceImg.src = "/img/trophySmall.gif"
+        diceImg.src = "./img/trophySmall.gif"
         newRound.style.display = "block"
         player2.style.borderStyle = "none"
         player1.style.borderStyle = "none"
