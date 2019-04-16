@@ -19,6 +19,27 @@ body {
     border-radius: 7px;
     box-shadow: 25px 3px 163px -66px rgba(0,0,0,0.75);
     padding: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "l r";
+}
+
+.instructions {
+    grid-area: l;
+}
+
+.rightside {
+    grid-area: r;
+    align-self: center;
+    justify-self: center;
+}
+
+#switcher {
+    height: 100px;
+    width: 320px;
+    font-size: 22px;
+    border-radius: 6px;
 }
 
 .main {
